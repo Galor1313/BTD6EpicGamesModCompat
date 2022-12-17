@@ -14,7 +14,7 @@ using UnityEngine.UI;
 namespace BTD6EOSBypasser {
     [HarmonyPatch]
     public class Mod : MelonMod {
-        private const string DisabledStoreMessage = "In order to get mods to run on Epic Games, I had to gut Epic Store functionality.";
+        private const string DisabledStoreMessage = "In order to get mods to run on Epic, I had to gut \nEpic Store functionality.";
 
         [HarmonyPatch(typeof(EOSHostManager), nameof(EOSHostManager.WaitTillReady))]
         [HarmonyPrefix]
