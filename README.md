@@ -4,7 +4,7 @@
  Thanks to GrahamKracker for the code he contributed.
 
 ## How to use
- 1. Download "BTD6EpicGamesModCompat.dll" from the [latest release](releases/latest).
+ 1. Download "BTD6EpicGamesModCompat.dll" from the [latest release](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/latest).
 
  2. Place "BTD6EpicGamesModCompat.dll" in your BloonsTD6/Plugins folder for it to work.
 
