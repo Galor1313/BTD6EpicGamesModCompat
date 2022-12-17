@@ -1,12 +1,16 @@
 ﻿using MelonLoader;
 using System;
+using System.IO;
 
-[assembly: MelonInfo(typeof(BTD6EpicGamesModCompat.Plugin), "BTD6 Epic Games Mod Compat", "1.0.0", "Baydock & GrahamKracker")]
+[assembly: MelonInfo(typeof(BTD6EpicGamesModCompat.Plugin), "BTD6 Epic Games Mod Compat", "1.0.0", "Baydock")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6-Epic")]
 
 namespace BTD6EpicGamesModCompat {
     public sealed class Plugin : MelonPlugin {
         public static MelonLogger.Instance Logger { get; private set; }
+
+        private const string EOSBypasserModPath = "Mods/BTD6EOSBypasser.dll";
+        private const string EOSBypasserResourcePath = "BTD6EOSBypasser.dll";
 
         // Runs before crash caused by EOSSDK thankfully
         public override void OnPreInitialization() {
@@ -27,6 +31,12 @@ namespace BTD6EpicGamesModCompat {
 
         public override void OnApplicationQuit() => EOSSDK.Restore();
 
-        public override void OnPreModsLoaded() => BTD6Retargeter.Retarget();
+        public override void OnPreModsLoaded() {
+            // Regenerate BTD6EOSBypasser mod
+            File.WriteAllBytes(EOSBypasserModPath, Resources.GetResource(EOSBypasserResourcePath));
+
+            // Retarget Mods
+            BTD6Retargeter.Retarget();
+        }
     }
 }

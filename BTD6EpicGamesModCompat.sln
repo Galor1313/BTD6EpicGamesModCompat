@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTD6EpicGamesModCompat", "BTD6EpicGamesModCompat\BTD6EpicGamesModCompat.csproj", "{17B7BFD6-F517-4414-8ED4-C65E41A09605}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CC5EABF3-60EF-4763-BF54-411A18AED774} = {CC5EABF3-60EF-4763-BF54-411A18AED774}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTD6EOSBypasser", "BTD6EOSBypasser\BTD6EOSBypasser.csproj", "{CC5EABF3-60EF-4763-BF54-411A18AED774}"
 EndProject
