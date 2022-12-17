@@ -7,6 +7,10 @@
 
 ## How to use
 
- Place "BTD6EpicGamesModCompat.dll" in your BloonsTD6/Plugins folder for it to work.
+ 1. Place "BTD6EpicGamesModCompat.dll" in your BloonsTD6/Plugins folder for it to work.
 
- ***DO NOT*** use this plugin if your are using the Steam version of the game.
+ 2. ***DO NOT*** use this plugin if your are using the Steam version of the game.
+ 
+ 3. Run the game, and you should be good to go.
+ 
+ 
