@@ -1,7 +1,7 @@
 ﻿using MelonLoader;
 using System;
 
-[assembly: MelonInfo(typeof(BTD6EpicGamesModCompat.Plugin), "BTD6 Epic Games Mod Compat", "1.0.0", "Baydock")]
+[assembly: MelonInfo(typeof(BTD6EpicGamesModCompat.Plugin), "BTD6 Epic Games Mod Compat", "1.0.0", "Baydock & GrahamKracker")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6-Epic")]
 
 namespace BTD6EpicGamesModCompat {
@@ -26,18 +26,7 @@ namespace BTD6EpicGamesModCompat {
         }
 
         public override void OnApplicationQuit() => EOSSDK.Restore();
-        
-        public override void OnPreModsLoaded() {
-            foreach (var mod in Directory.GetFiles(MelonEnvironment.ModsDirectory))
-                MelonAssembly.LoadMelonAssembly(mod);
-            
-            foreach (var melonAssembly in MelonAssembly.LoadedAssemblies.Where(x=>!x.Equals(this.MelonAssembly))) {
-                foreach (var melonBase in melonAssembly.LoadedMelons) {
-                    melonBase.Games[0] = new MelonGameAttribute("Ninja Kiwi", "BloonsTD6-Epic");
-                    melonAssembly.UnregisterMelons(melonAssembly.Location);
-                    MelonAssembly.LoadMelonAssembly(melonAssembly.Location).LoadMelons();
-                }
-            }
-        }
+
+        public override void OnPreModsLoaded() => BTD6Retargeter.Retarget();
     }
 }
