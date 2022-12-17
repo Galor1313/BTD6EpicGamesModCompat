@@ -26,5 +26,18 @@ namespace BTD6EpicGamesModCompat {
         }
 
         public override void OnApplicationQuit() => EOSSDK.Restore();
+        
+        public override void OnPreModsLoaded() {
+            foreach (var mod in Directory.GetFiles(MelonEnvironment.ModsDirectory))
+                MelonAssembly.LoadMelonAssembly(mod);
+            
+            foreach (var melonAssembly in MelonAssembly.LoadedAssemblies.Where(x=>!x.Equals(this.MelonAssembly))) {
+                foreach (var melonBase in melonAssembly.LoadedMelons) {
+                    melonBase.Games[0] = new MelonGameAttribute("Ninja Kiwi", "BloonsTD6-Epic");
+                    melonAssembly.UnregisterMelons(melonAssembly.Location);
+                    MelonAssembly.LoadMelonAssembly(melonAssembly.Location).LoadMelons();
+                }
+            }
+        }
     }
 }
