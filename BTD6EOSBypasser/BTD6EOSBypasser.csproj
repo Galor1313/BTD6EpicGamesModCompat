@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\net6\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppcom.Epic.OnlineServices">
+      <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2Cppcom.Epic.OnlineServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppcom.playeveryware.eos">
+      <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2Cppcom.playeveryware.eos.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime">
+      <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="MelonLoader">
+      <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\net6\MelonLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Unity.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="D:\Games\epicgames\BloonsTD6\Mods" ContinueOnError="true" />
+	</Target>
+
+</Project>
