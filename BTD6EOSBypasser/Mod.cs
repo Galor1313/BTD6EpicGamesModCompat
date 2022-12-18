@@ -9,7 +9,7 @@ using Il2CppSystem.Threading.Tasks;
 using MelonLoader;
 using UnityEngine.UI;
 
-[assembly: MelonInfo(typeof(BTD6EOSBypasser.Mod), "BTD6 EOS Bypasser", "1.0.0", "Baydock")]
+[assembly: MelonInfo(typeof(BTD6EOSBypasser.Mod), "BTD6 EOS Bypasser", "1.0.1", "Baydock")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6-Epic")]
 
 namespace BTD6EOSBypasser {
