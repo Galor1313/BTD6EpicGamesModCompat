@@ -25,11 +25,17 @@
     <Reference Include="Il2Cppmscorlib">
       <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
     </Reference>
+    <Reference Include="Il2CppNinjaKiwi.Common">
+      <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2CppNinjaKiwi.Common.dll</HintPath>
+    </Reference>
     <Reference Include="MelonLoader">
       <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\net6\MelonLoader.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ResourceManager">
       <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Unity.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>

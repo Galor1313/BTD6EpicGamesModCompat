@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using Il2Cpp;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.UI_New.Main;
 using Il2CppAssets.Scripts.Unity.UI_New.Popups;
@@ -18,7 +19,7 @@ namespace BTD6EOSBypasser {
 
         private const string DisabledStoreMessage = "In order to get mods to run on Epic Games, I had to gut Epic Store functionality.";
         private const string DisabledEpicLoginMessage = "In order to get mods to run on Epic Games, I had to gut Epic Login functionality.\n" +
-                                                        "Get a linking code for an account by logging into BTD Monkey City, BTD Battles, BTD6, Bloons Adventure Time TD, or BTD Battles 2 on Steam or a mobile device.";
+                                                        "Get a linking code for an account by logging into BTD Battles, BTD6, BTD Monkey City, Bloons Adventure Time TD, or BTD Battles 2 on Steam or a mobile device.";
 
         public override void OnInitializeMelon() {
             Logger = LoggerInstance;
@@ -84,7 +85,7 @@ namespace BTD6EOSBypasser {
 
             // Make image and text look disabled to indicate it is not functional
             loginEpicButton.gameObject.GetComponent<Image>().color = loginEpicButton.colors.disabledColor;
-            loginEpicButton.gameObject.GetComponentInChildren<Image>().color = loginEpicButton.colors.disabledColor;
+            loginEpicButton.gameObject.GetComponentInChildren<NK_TextMeshProUGUI>().color = loginEpicButton.colors.disabledColor;
 
             // Remove previous functionality, and add a message to explain why
             loginEpicButton.onClick.RemoveAllListeners();
