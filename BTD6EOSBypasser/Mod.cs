@@ -14,7 +14,15 @@ using UnityEngine.UI;
 namespace BTD6EOSBypasser {
     [HarmonyPatch]
     public class Mod : MelonMod {
+        public static MelonLogger.Instance Logger { get; private set; }
+
         private const string DisabledStoreMessage = "In order to get mods to run on Epic Games, I had to gut Epic Store functionality.";
+        private const string DisabledEpicLoginMessage = "In order to get mods to run on Epic Games, I had to gut Epic Login functionality.\n" +
+                                                        "Get a linking code for an account by logging into BTD Monkey City, BTD Battles, BTD6, Bloons Adventure Time TD, or BTD Battles 2 on Steam or a mobile device.";
+
+        public override void OnInitializeMelon() {
+            Logger = LoggerInstance;
+        }
 
         [HarmonyPatch(typeof(EOSHostManager), nameof(EOSHostManager.WaitTillReady))]
         [HarmonyPrefix]
@@ -63,9 +71,24 @@ namespace BTD6EOSBypasser {
             storeButton.gameObject.GetComponent<Image>().color = storeButton.colors.disabledColor;
 
             // Remove previous functionality, and add a message to explain why
-            MainMenu.__c.__9__21_10 = null; // Where previous UnityEvent is stored
+            MainMenu.__c.__9__21_10 = null; // Where previous UnityAction is stored
             storeButton.onClick.RemoveAllListeners();
             storeButton.onClick.AddListener(new System.Action(() => PopupScreen.instance.ShowOkPopup(DisabledStoreMessage)));
+        }
+
+        [HarmonyPatch(typeof(MainAccountPopup), nameof(MainAccountPopup.Awake))]
+        [HarmonyPostfix]
+        // Stop the user from trying to log in with epic since EOS is unfunctional
+        public static void DisableEpicLogin(MainAccountPopup __instance) {
+            Button loginEpicButton = __instance.loginEpicBtn;
+
+            // Make image and text look disabled to indicate it is not functional
+            loginEpicButton.gameObject.GetComponent<Image>().color = loginEpicButton.colors.disabledColor;
+            loginEpicButton.gameObject.GetComponentInChildren<Image>().color = loginEpicButton.colors.disabledColor;
+
+            // Remove previous functionality, and add a message to explain why
+            loginEpicButton.onClick.RemoveAllListeners();
+            loginEpicButton.onClick.AddListener(new System.Action(() => PopupScreen.instance.ShowOkPopup(DisabledEpicLoginMessage)));
         }
     }
 }
