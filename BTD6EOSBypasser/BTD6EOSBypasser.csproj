@@ -14,9 +14,6 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Il2Cppcom.Epic.OnlineServices">
-      <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2Cppcom.Epic.OnlineServices.dll</HintPath>
-    </Reference>
     <Reference Include="Il2Cppcom.playeveryware.eos">
       <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2Cppcom.playeveryware.eos.dll</HintPath>
     </Reference>
