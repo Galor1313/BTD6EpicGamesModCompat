@@ -4,13 +4,15 @@
  Thanks to GrahamKracker for the code he contributed.
 
 ## How to use
- 1. Download "BTD6EpicGamesModCompat.dll" from the [latest release](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/latest).
+ 1. Install MelonLoader from https://melonwiki.xyz.
 
- 2. Place "BTD6EpicGamesModCompat.dll" in your BloonsTD6/Plugins folder for it to work.
+ 2. Download "BTD6EpicGamesModCompat.dll" from the [latest release](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/latest).
 
- 3. ***DO NOT*** use this plugin if your are using the Steam version of the game.
+ 3. Place "BTD6EpicGamesModCompat.dll" in your BloonsTD6/Plugins folder for it to work.
+
+ 4. ***DO NOT*** use this plugin if your are using the Steam version of the game.
  
- 4. Run the game, and you should be good to go.
+ 5. Run the game, and you should be good to go.
  
  ## How to log in
   It is not possible to log in with an Epic Games account while mods are active because the Epic Games functionality needed to be gutted for BloonsTD6-Epic to run with mods.
