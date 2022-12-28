@@ -17,7 +17,7 @@
  
 #### Skip here if you already have MelonLoader.
 
- 6. Download [BTD6EpicGamesModCompat.dll](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/tag/1.0.2).
+ 6. Download [BTD6EpicGamesModCompat.dll](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/latest).
 
  7. Place it into  your `\EpicGames\BloonsTD6\Plugins` folder.
 
