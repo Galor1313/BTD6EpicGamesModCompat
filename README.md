@@ -3,17 +3,28 @@
 
  Thanks to GrahamKracker for the code he contributed.
 
-## How to use
- 1. Install MelonLoader from https://melonwiki.xyz.
-
- 2. Download "BTD6EpicGamesModCompat.dll" from the [latest release](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/latest).
-
- 3. Place "BTD6EpicGamesModCompat.dll" in your BloonsTD6/Plugins folder for it to work.
-
- 4. ***DO NOT*** use this plugin if your are using the Steam version of the game.
+---
+## Installation
+ **ONLY FOR EPIC GAMES, NOT STEAM**
  
- 5. Run the game, and you should be good to go.
+ 1. Download [MelonLoader.Installer.exe](https://github.com/LavaGang/MelonLoader/releases).
+
+ 2. Run the exe file, then go to `Settings`, and enable "Show ALPHA Pre-Releases".
+
+ 3. Go back to `Automated`, and set version to 0.6.0 if it isn't already.
+
+ 4. Select `BloonsTD6.exe` from the BloonsTD6 install folder, and hit install.
  
+#### Skip here if you already have MelonLoader.
+
+ 6. Download [BTD6EpicGamesModCompat.dll](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/tag/1.0.2).
+
+ 7. Place it into  your `\EpicGames\BloonsTD6\Plugins` folder.
+
+ 8. Run the game, and you should be good to go.
+
+---
+
  ## How to log in
   It is not possible to log in with an Epic Games account while mods are active because the Epic Games functionality needed to be gutted for BloonsTD6-Epic to run with mods.
   
@@ -37,3 +48,4 @@
  
   Ninja Kiwi games compatible with link codes: BTD Battles, BTD Monkey City, BTD6, Bloons Adventure Time TD, BTD Battles 2.
  
+---
