@@ -12,7 +12,7 @@
  2. Run the exe file, then go to `Settings`, and enable the setting in the image below
 ![](https://i.imgur.com/wEOScGL.png)
 
- 3. Go to `Automated` and make sure it says 0.6.0
+ 3. Go to `Automated`, and make sure it says 0.6.0
 
  4. Select your `BloonsTD6.exe` from `C:\Program Files\Epic Games\BloonsTD6`, and hit install, or whatever (file path here is default, if you have a custom installation location then use that)
 
