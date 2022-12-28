@@ -14,10 +14,10 @@
  3. Go back to `Automated`, and set version to 0.6.0 if it isn't already.
 
  4. Select `BloonsTD6.exe` from the BloonsTD6 install folder, and hit install.
-
- 6. Download [BTD6EpicGamesModCompat.dll](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/tag/1.0.2).
  
 #### Skip here if you already have MelonLoader.
+
+ 6. Download [BTD6EpicGamesModCompat.dll](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/tag/1.0.2).
 
  7. Place it into  your `\EpicGames\BloonsTD6\Plugins` folder.
 
