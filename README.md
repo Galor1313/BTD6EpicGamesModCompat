@@ -3,17 +3,39 @@
 
  Thanks to GrahamKracker for the code he contributed.
 
-## How to use
- 1. Install MelonLoader from https://melonwiki.xyz.
+---
+## Installation - Full
+ <strong>ONLY FOR EPIC GAMES, NOT STEAM</strong>
+ <br></br>
+ 1. Download [MelonLoader.Installer.exe](https://github.com/LavaGang/MelonLoader/releases)
 
- 2. Download "BTD6EpicGamesModCompat.dll" from the [latest release](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/latest).
+ 2. Run the exe file, then go to `Settings`, and enable the setting in the image below
+![](https://i.imgur.com/wEOScGL.png)
 
- 3. Place "BTD6EpicGamesModCompat.dll" in your BloonsTD6/Plugins folder for it to work.
+ 3. Go to `Automated` and make sure it says 0.6.0
 
- 4. ***DO NOT*** use this plugin if your are using the Steam version of the game.
- 
- 5. Run the game, and you should be good to go.
- 
+ 4. Select your `BloonsTD6.exe` from `C:\Program Files\Epic Games\BloonsTD6`, and hit install, or whatever (file path here is default, if you have a custom installation location then use that)
+
+ 5. Once it's done, download the latest [Btd6ModHelper.dll]() and place it into your `\EpicGames\BloonsTD6\Mods` folder
+
+ 6. Download [BTD6EpicGamesModCompat.dll](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/tag/1.0.2) and place it into  your `\EpicGames\BloonsTD6\Plugins` folder
+
+ 7. Launch the game, and enjoy
+
+---
+
+ ## Installation - Just BTD6EpicGamesModCompat
+ <strong>ONLY FOR EPIC GAMES, NOT STEAM</strong>
+ <br></br>
+
+Already got MelonLoader installed?
+
+  1. Download [BTD6EpicGamesModCompat.dll](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/tag/1.0.2) and place it into  your `\EpicGames\BloonsTD6\Plugins` folder
+
+ 2. Launch the game, and enjoy
+
+---
+
  ## How to log in
   It is not possible to log in with an Epic Games account while mods are active because the Epic Games functionality needed to be gutted for BloonsTD6-Epic to run with mods.
   
@@ -37,3 +59,4 @@
  
   Ninja Kiwi games compatible with link codes: BTD Battles, BTD Monkey City, BTD6, Bloons Adventure Time TD, BTD Battles 2.
  
+---
