@@ -16,7 +16,7 @@
 
  4. Select your `BloonsTD6.exe` from `C:\Program Files\Epic Games\BloonsTD6`, and hit install, or whatever (file path here is default, if you have a custom installation location then use that)
 
- 5. Once it's done, download the latest [Btd6ModHelper.dll]() and place it into your `\EpicGames\BloonsTD6\Mods` folder
+ 5. Once it's done, download the latest [Btd6ModHelper.dll](https://github.com/gurrenm3/BTD-Mod-Helper/releases) and place it into your `\EpicGames\BloonsTD6\Mods` folder (Note: Do not download the XML file)
 
  6. Download [BTD6EpicGamesModCompat.dll](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/tag/1.0.2) and place it into  your `\EpicGames\BloonsTD6\Plugins` folder
 
