@@ -4,35 +4,24 @@
  Thanks to GrahamKracker for the code he contributed.
 
 ---
-## Installation - Full
- <strong>ONLY FOR EPIC GAMES, NOT STEAM</strong>
- <br></br>
- 1. Download [MelonLoader.Installer.exe](https://github.com/LavaGang/MelonLoader/releases)
+## Installation
+ **ONLY FOR EPIC GAMES, NOT STEAM**
+ 
+ 1. Download [MelonLoader.Installer.exe](https://github.com/LavaGang/MelonLoader/releases).
 
- 2. Run the exe file, then go to `Settings`, and enable the setting in the image below
-![](https://i.imgur.com/wEOScGL.png)
+ 2. Run the exe file, then go to `Settings`, and enable "Show ALPHA Pre-Releases".
 
- 3. Go to `Automated`, and make sure it says 0.6.0
+ 3. Go back to `Automated`, and set version to 0.6.0 if it isn't already.
 
- 4. Select your `BloonsTD6.exe` from `C:\Program Files\Epic Games\BloonsTD6`, and hit install, or whatever (file path here is default, if you have a custom installation location then use that)
+ 4. Select `BloonsTD6.exe` from the BloonsTD6 install folder, and hit install.
 
- 5. Once it's done, download the latest [Btd6ModHelper.dll](https://github.com/gurrenm3/BTD-Mod-Helper/releases) and place it into your `\EpicGames\BloonsTD6\Mods` folder (Note: Do not download the XML file)
+ 6. Download [BTD6EpicGamesModCompat.dll](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/tag/1.0.2).
+ 
+#### Skip here if you already have MelonLoader.
 
- 6. Download [BTD6EpicGamesModCompat.dll](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/tag/1.0.2) and place it into  your `\EpicGames\BloonsTD6\Plugins` folder
+ 7. Place it into  your `\EpicGames\BloonsTD6\Plugins` folder.
 
- 7. Launch the game, and enjoy
-
----
-
- ## Installation - Just BTD6EpicGamesModCompat
- <strong>ONLY FOR EPIC GAMES, NOT STEAM</strong>
- <br></br>
-
-Already got MelonLoader installed?
-
-  1. Download [BTD6EpicGamesModCompat.dll](https://github.com/Baydock/BTD6EpicGamesModCompat/releases/tag/1.0.2) and place it into  your `\EpicGames\BloonsTD6\Plugins` folder
-
- 2. Launch the game, and enjoy
+ 8. Run the game, and you should be good to go.
 
 ---
 
