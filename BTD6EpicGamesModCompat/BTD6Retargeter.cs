@@ -17,14 +17,8 @@ namespace BTD6EpicGamesModCompat {
                 if (!Path.HasExtension(modFile) || !Path.GetExtension(modFile).Equals(".dll"))
                     return null;
 
-                MelonAssembly melon;
-                try {
-                    melon = MelonAssembly.LoadMelonAssembly(modFile);
-                } catch (Exception e) {
-                    Plugin.Logger.Error($"Failed to load Melon Assembly from {modFile}: ", e);
-                    return null;
-                }
-                return melon;
+                // LoadMelonAssembly already error checks
+                return MelonAssembly.LoadMelonAssembly(modFile);
             }).Where(melon => melon is not null).ToArray();
 
             Plugin.Logger.WriteSpacer();
