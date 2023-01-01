@@ -13,7 +13,19 @@ namespace BTD6EpicGamesModCompat {
             Plugin.Logger.Msg(ConsoleColor.Magenta, "------------------------------");
 
             // Load all mod assemblies from file
-            MelonAssembly[] modAssemblies = Directory.GetFiles(MelonEnvironment.ModsDirectory).Select(modFile => MelonAssembly.LoadMelonAssembly(modFile)).ToArray();    
+            MelonAssembly[] modAssemblies = Directory.GetFiles(MelonEnvironment.ModsDirectory).Select(modFile => {
+                if (!Path.HasExtension(modFile) || !Path.GetExtension(modFile).Equals(".dll"))
+                    return null;
+
+                MelonAssembly melon;
+                try {
+                    melon = MelonAssembly.LoadMelonAssembly(modFile);
+                } catch (Exception e) {
+                    Plugin.Logger.Error($"Failed to load Melon Assembly from {modFile}: ", e);
+                    return null;
+                }
+                return melon;
+            }).Where(melon => melon is not null).ToArray();
 
             Plugin.Logger.WriteSpacer();
             Plugin.Logger.Msg("Retargeting mods...");
