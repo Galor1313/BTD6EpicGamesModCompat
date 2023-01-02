@@ -13,7 +13,13 @@ namespace BTD6EpicGamesModCompat {
             Plugin.Logger.Msg(ConsoleColor.Magenta, "------------------------------");
 
             // Load all mod assemblies from file
-            MelonAssembly[] modAssemblies = Directory.GetFiles(MelonEnvironment.ModsDirectory).Select(modFile => MelonAssembly.LoadMelonAssembly(modFile)).ToArray();    
+            MelonAssembly[] modAssemblies = Directory.GetFiles(MelonEnvironment.ModsDirectory).Select(modFile => {
+                if (!Path.HasExtension(modFile) || !Path.GetExtension(modFile).Equals(".dll"))
+                    return null;
+
+                // LoadMelonAssembly already error checks
+                return MelonAssembly.LoadMelonAssembly(modFile);
+            }).Where(melon => melon is not null).ToArray(); // Remove all null assemblies
 
             Plugin.Logger.WriteSpacer();
             Plugin.Logger.Msg("Retargeting mods...");
@@ -23,6 +29,10 @@ namespace BTD6EpicGamesModCompat {
             foreach (MelonAssembly melonAssembly in modAssemblies) {
                 // Iterate over all melons in each mod assembly
                 foreach (MelonBase mod in melonAssembly.LoadedMelons) {
+                    // Probably will never happen, but nice to check for
+                    if (mod is null)
+                        continue;
+
                     // If the mod doesn't target a game, skip
                     if (mod.Games.Length < 1)
                         continue;
