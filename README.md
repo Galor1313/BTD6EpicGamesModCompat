@@ -7,7 +7,7 @@
 ## Installation
  **ONLY FOR EPIC GAMES, NOT STEAM**
  
- 1. Download [MelonLoader.Installer.exe](https://github.com/LavaGang/MelonLoader/releases).
+ 1. Download [MelonLoader.Installer.exe](https://github.com/LavaGang/MelonLoader/releases/v0.6.0).
 
  2. Run the exe file, then go to `Settings`, and enable "Show ALPHA Pre-Releases".
 
