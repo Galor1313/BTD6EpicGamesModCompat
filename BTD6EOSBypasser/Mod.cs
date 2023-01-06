@@ -2,12 +2,16 @@
 using HarmonyLib;
 using Il2Cpp;
 using Il2CppAssets.Scripts.Unity;
+using Il2CppAssets.Scripts.Unity.UI_New;
+using Il2CppAssets.Scripts.Unity.UI_New.Knowledge;
 using Il2CppAssets.Scripts.Unity.UI_New.Main;
 using Il2CppAssets.Scripts.Unity.UI_New.Main.HeroSelect;
+using Il2CppAssets.Scripts.Unity.UI_New.Main.PowersSelect;
 using Il2CppAssets.Scripts.Unity.UI_New.Pause;
 using Il2CppAssets.Scripts.Unity.UI_New.Popups;
 using Il2CppAssets.Scripts.Unity.UI_New.Store;
 using Il2CppAssets.Scripts.Unity.UI_New.Upgrade;
+using Il2CppNinjaKiwi.Common;
 using Il2CppPlayEveryWare.EpicOnlineServices;
 using Il2CppSystem.Threading.Tasks;
 using MelonLoader;
@@ -82,10 +86,10 @@ public class Mod : MelonMod {
             PopupScreen.instance.ShowOkPopup(DisabledStoreMessage)));
     }
 
-    [HarmonyPatch(typeof(MainMenu), nameof(MainMenu.Open))]
+    [HarmonyPatch(typeof(Purchaser), nameof(Purchaser.InitializePurchasing))]
     [HarmonyPrefix]
-    // I got an error here with a fresh account, idk, patching adds error catching so it's fine now
-    public static void BypassError() { }
+    // Disabling purchasing startup
+    public static bool DisablePurchasingStartup() => false;
 
     [HarmonyPatch(typeof(MainAccountPopup), nameof(MainAccountPopup.Awake))]
     [HarmonyPostfix]
@@ -144,5 +148,35 @@ public class Mod : MelonMod {
     // Disable hero bundles
     public static void RemoveHeroBundles(HeroUpgradeDetails __instance) {
         Object.Destroy(__instance.heroBundleBtn.transform.parent.gameObject);
+    }
+
+    [HarmonyPatch(typeof(CommonForegroundScreen), nameof(CommonForegroundScreen.Show))]
+    [HarmonyPostfix]
+    // Don't show buy monkey money or monkey knowledge
+    public static void HideBuyMMMKButtons(CommonForegroundScreen __instance) {
+        __instance.buyMoreMonkeyMoneyButton.SetActive(false);
+        __instance.buyKnowledgeButton.SetActive(false);
+    }
+
+    [HarmonyPatch(typeof(InstaTowerScreen), nameof(InstaTowerScreen.Awake))]
+    [HarmonyPostfix]
+    // Don't show insta monkey buy button
+    public static void DisableBuyInstasButton(InstaTowerScreen __instance) {
+        Object.Destroy(__instance.buyInstasBtn.gameObject);
+    }
+
+    [HarmonyPatch(typeof(KnowledgeMain), nameof(KnowledgeMain.Open))]
+    [HarmonyPostfix]
+    // Don't show unlock mk early button
+    public static void DisableUnlockMKEarlyButton(KnowledgeMain __instance) {
+        Object.Destroy(__instance.storeBanner);
+    }
+
+    [HarmonyPatch(typeof(PopupScreen), nameof(PopupScreen.ShowMonkeyMonkeyPopup))]
+    [HarmonyPrefix]
+    // Switch from buy monkey money to only saying they don't have enough
+    public static bool SwitchToNonBuying(PopupScreen __instance, PopupScreen.ReturnCallback onCancel) {
+        __instance.ShowOkPopup("Not enough monkey money.");
+        return false;
     }
 }
