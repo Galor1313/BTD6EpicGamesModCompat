@@ -137,7 +137,7 @@ public class Mod : MelonMod {
     [HarmonyPatch(typeof(TowerProductButton), nameof(TowerProductButton.StartPurchase))]
     [HarmonyPrefix]
     // Disable purchasing
-    public static bool DisableTowerProductButton(TowerProductButton __instance) => false;
+    public static bool DisableTowerProductButton() => false;
 
     [HarmonyPatch(typeof(HeroUpgradeDetails), nameof(HeroUpgradeDetails.Awake))]
     [HarmonyPostfix]
