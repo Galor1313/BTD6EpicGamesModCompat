@@ -14,16 +14,16 @@
 
     <ItemGroup>
         <Reference Include="0Harmony">
-            <HintPath>C:\Program Files\Epic Games\BloonsTD6\MelonLoader\net6\0Harmony.dll</HintPath>
+            <HintPath>D:\Games\epicgames\BloonsTD6\MelonLoader\net6\0Harmony.dll</HintPath>
         </Reference>
         <Reference Include="MelonLoader">
-            <HintPath>C:\Program Files\Epic Games\BloonsTD6\MelonLoader\net6\MelonLoader.dll</HintPath>
+            <HintPath>D:\Games\epicgames\BloonsTD6\MelonLoader\net6\MelonLoader.dll</HintPath>
         </Reference>
     </ItemGroup>
 
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Copy SourceFiles="$(TargetPath)" DestinationFolder="C:\Program Files\Epic Games\BloonsTD6\Plugins"/>
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="D:\Games\epicgames\BloonsTD6\Plugins"/>
     </Target>
 
 </Project>
