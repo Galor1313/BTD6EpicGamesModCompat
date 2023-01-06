@@ -1,29 +1,32 @@
 ﻿using System.IO;
 
-namespace BTD6EpicGamesModCompat {
-    internal static class EOSSDK {
-        // Paths for EOSSDK
-        private const string EOSSDKName = "EOSSDK-Win64-Shipping.dll";
-        private const string BTD6PluginsFolder = @"BloonsTD6_Data\Plugins\x86_64\";
-        private const string BackupFolder = BTD6PluginsFolder + @"\backup\";
-        private const string EOSSDKPath = BTD6PluginsFolder + EOSSDKName;
-        private const string EOSSDKBackupPath = BackupFolder + EOSSDKName;
+namespace BTD6EpicGamesModCompat;
 
-        // Remove EOSSDK to not crash melonloader immediately
-        public static void Remove() {
-            Directory.CreateDirectory(BackupFolder);
-            if (File.Exists(EOSSDKPath))
-                File.Move(EOSSDKPath, EOSSDKBackupPath);
+internal static class EOSSDK
+{
+    // Paths for EOSSDK
+    private const string EOSSDKName = "EOSSDK-Win64-Shipping.dll";
+    private const string BTD6PluginsFolder = @"BloonsTD6_Data\Plugins\x86_64\";
+    private const string BackupFolder = BTD6PluginsFolder + @"\backup\";
+    private const string EOSSDKPath = BTD6PluginsFolder + EOSSDKName;
+    private const string EOSSDKBackupPath = BackupFolder + EOSSDKName;
 
-            Plugin.Logger.Msg("Removed EOSSDK");
-        }
+    // Remove EOSSDK to not crash melonloader immediately
+    public static void Remove()
+    {
+        Directory.CreateDirectory(BackupFolder);
+        if (File.Exists(EOSSDKPath))
+            File.Move(EOSSDKPath, EOSSDKBackupPath);
 
-        // Restore EOSSDK for if the player wants to go unmodded
-        public static void Restore() {
-            if (File.Exists(EOSSDKBackupPath))
-                File.Move(EOSSDKBackupPath, EOSSDKPath);
+        Plugin.Logger.Msg("Removed EOSSDK");
+    }
 
-            Plugin.Logger.Msg("Restored EOSSDK");
-        }
+    // Restore EOSSDK for if the player wants to go unmodded
+    public static void Restore()
+    {
+        if (File.Exists(EOSSDKBackupPath))
+            File.Move(EOSSDKBackupPath, EOSSDKPath);
+
+        Plugin.Logger.Msg("Restored EOSSDK");
     }
 }
